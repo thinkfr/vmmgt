@@ -1,0 +1,14 @@
+# Connections configuration file
+---
+lab:
+  vcenter: '127.0.0.1'
+  user: 'vcenter'
+  password: 'password'
+#preproduction:
+#  vcenter: '127.0.0.1'
+#  user: 'vcenter'
+#  password: 'password'
+#production:
+#  vcenter: '127.0.0.1'
+#  user: 'vcenter'
+#  password: 'password'
