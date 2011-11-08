@@ -1,0 +1,39 @@
+Virtual machine driving
+
+*WORK IN PROGRESS*
+
+CLI usage:
+
+  $ ruby vmmgt/script/drive_vs.rb 
+  You can control the virtualisation power buddy !
+  
+  Usage:
+    ./drive_vs.rb create ENV VMNAME
+    ./drive_vs.rb destroy ENV VMNAME
+    ./drive_vs.rb start ENV VMNAME
+    ./drive_vs.rb stop ENV VMNAME
+    ./drive_vs.rb reset ENV VMNAME
+    ./drive_vs.rb setcpu ENV VMNAME CPUCOUNT
+    ./drive_vs.rb setram ENV VMNAME RAMSIZE
+    ./drive_vs.rb changevlan ENV VMNAME VLAN_LABEL CARD_ID
+    ./drive_vs.rb adddisk ENV VMNAME SIZE DATASTORE
+    ./drive_vs.rb status ENV VMNAME
+
+  $ ruby vmmgt/bin/drive_vs.rb create lab vmtest
+  Let's create a new VM !
+  { 'state' => 'success', 'error' => nil }
+  
+Development:
+
+  driver = VmMgt::Driver.plop('myenv', 'vmware')
+  driver.start_vm('myservername')
+
+Dependencies:
+
+  gem install rbvmomi
+
+Todo:
+* Return the MAC address when the creation succeed
+* Write the MCollective agent
+* Exception for the connection
+* Add a guest id management to choose the right operating system
